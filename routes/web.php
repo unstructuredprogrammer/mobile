@@ -13,6 +13,13 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', 'UserController@index');
+$router->post('/info', 'UserController@validation');
+$router->get('/info', 'UserController@validation');
+$router->get('/add', 'UserController@add');
+$router->post('/upload', 'UserController@upload');
+$router->get('/show', 'UserController@info');
+
+
+$router->get('/api/read/info', 'ApiController@read');
+$router->get('/api/del/info/', 'ApiController@delById');
